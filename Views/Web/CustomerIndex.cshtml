@@ -1,0 +1,49 @@
+﻿@model CRUD.NET.Models.Customer
+
+@{
+    ViewData["Title"] = "CustomerIndex";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>CustomerIndex</h1>
+
+<h4 class="alert alert-success"> @ViewBag.success</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CustomerIndex" class="">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Custumer_Name" class="control-label"></label>
+                <input asp-for="Custumer_Name" class="form-control" />
+                <span asp-validation-for="Custumer_Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Custumer_Email" class="control-label"></label>
+                <input asp-for="Custumer_Email" class="form-control" />
+                <span asp-validation-for="Custumer_Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Custumer_Phone" class="control-label"></label>
+                <input asp-for="Custumer_Phone" class="form-control" />
+                <span asp-validation-for="Custumer_Phone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Custumer_City" class="control-label"></label>
+                <input asp-for="Custumer_City" class="form-control" />
+                <span asp-validation-for="Custumer_City" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
